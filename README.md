@@ -1,0 +1,1 @@
+# osilasi-getaran-pegas
