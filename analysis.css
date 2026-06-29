@@ -1,0 +1,165 @@
+/* =====================================================
+   ANALYSIS / CURRENT SHARED STYLES
+   ===================================================== */
+
+/* ---------- SECTION GRID ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  /* DIPERKECIL */
+  margin-bottom: 18px;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background: linear-gradient(
+    180deg,
+    var(--card-grad-1),
+    var(--card-grad-2)
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  padding: 20px;
+  min-height: 110px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+}
+
+.card-value {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- HASIL ANALISIS ---------- */
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 6px 0;
+
+  font-size: 14px;
+  color: var(--text);
+}
+
+.stat-row span:last-child {
+  font-weight: 600;
+}
+
+/* ---------- CHART PANEL ---------- */
+.chart-card {
+  background: linear-gradient(
+    180deg,
+    var(--card-grad-1),
+    var(--card-grad-2)
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  padding: 20px;
+
+  /* TAMBAHAN AGAR JARAK ANTAR GRAFIK RAPI */
+  margin-bottom: 14px;
+}
+
+/* ---------- CHART HEADER ---------- */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 12px;
+
+  /* DIPERKECIL */
+  margin-bottom: 10px;
+}
+
+.chart-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+.chart-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.chart-actions button {
+  padding: 7px 14px;
+  font-size: 13px;
+
+  border-radius: 8px;
+
+  background: var(--hover);
+  border: 1px solid var(--border);
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.chart-actions button:hover {
+  background: var(--active-bg);
+}
+
+.chart-actions button:active {
+  transform: scale(0.97);
+}
+
+/* =====================================================
+   CHART WRAPPER DEFAULT
+   UNTUK CURRENT PAGE
+   ===================================================== */
+.chart-wrapper {
+
+  /* UKURAN NORMAL CURRENT */
+  height: 360px;
+
+  padding-top: 8px;
+}
+
+/* =====================================================
+   KHUSUS HALAMAN ANALYSIS
+   AGAR GRAFIK LEBIH KECIL
+   ===================================================== */
+.analysis-chart {
+
+  height: 250px;
+
+  padding-top: 4px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}

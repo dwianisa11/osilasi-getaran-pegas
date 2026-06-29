@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Current – Osilasi Pegas</title>
+
+  <!-- ================= CSS ================= -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/analysis.css" />
+</head>
+
+<body>
+<div class="app">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Osilasi Pegas</span>
+      <button class="collapse-btn" onclick="toggleSidebar()">❮</button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item active">
+        <span class="nav-icon">📈</span>
+        <span class="nav-text">Current</span>
+      </a>
+
+      <a class="nav-item" href="analysis.html">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Analysis</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <h1>Realtime Monitoring</h1>
+      <button class="theme-btn" onclick="toggleTheme()">Theme</button>
+    </div>
+
+    <!-- ================= STATUS ================= -->
+    <section class="cards">
+      <div class="card">
+        <div class="card-title">Distance</div>
+        <div class="card-value">
+          <span id="xValue">0.00</span> cm
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Status</div>
+        <div class="card-value" id="status">Disconnected</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Timestamp</div>
+        <div class="card-value" id="timestamp">-</div>
+      </div>
+    </section>
+
+    <!-- ================= CHART ================= -->
+    <section class="chart-card">
+      <div class="chart-header">
+        <h3>Grafik Realtime</h3>
+
+        <div class="chart-actions">
+          <button onclick="connect()">Connect</button>
+          <button onclick="startRealtime()">Start</button>
+          <button onclick="stopRealtime()">Stop</button>
+          <button onclick="exportCSV()">Export Excel</button>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <canvas id="realtimeChart"></canvas>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- XLSX (WAJIB untuk export Excel) -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<!-- UI -->
+<script src="../js/ui.js"></script>
+
+<!-- Serial + Realtime -->
+<script src="../js/serial.js"></script>
+<script src="../js/realtime.js"></script>
+
+<!-- Chart -->
+<script src="../js/chart-realtime.js"></script>
+
+<!-- Export XLSX -->
+<script src="../js/csv_export.js"></script>
+
+<!-- INIT -->
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    if (typeof initRealtimeChart === "function") {
+      initRealtimeChart();
+    } else {
+      console.error("initRealtimeChart() tidak ditemukan");
+    }
+  });
+</script>
+
+</body>
+</html>

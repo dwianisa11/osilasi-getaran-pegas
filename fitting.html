@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fitting Sinus – Osilasi Pegas</title>
+
+  <!-- ================= CSS ================= -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/analysis.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+      <span class="sidebar-title">Osilasi Pegas</span>
+
+      <button class="collapse-btn" onclick="toggleSidebar()">
+        ❮
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="nav-item" href="current.html">
+        <span class="nav-icon">📈</span>
+        <span class="nav-text">Current</span>
+      </a>
+
+      <a class="nav-item" href="analysis.html">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Analysis</span>
+      </a>
+
+      <a class="nav-item active" href="fitting.html">
+        <span class="nav-icon">〰️</span>
+        <span class="nav-text">Fitting Sinus</span>
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <!-- ================= TOPBAR ================= -->
+    <div class="topbar">
+
+      <h1>Hasil Fitting Sinus Osilasi Pegas</h1>
+
+      <button class="theme-btn" onclick="toggleTheme()">
+        Theme
+      </button>
+
+    </div>
+
+    <!-- ================= CARDS ================= -->
+    <section class="cards">
+
+      <!-- Hasil Analisis -->
+      <div class="card">
+
+        <div class="card-title">
+          Hasil Analisis Fitting
+        </div>
+
+        <div class="stat-row">
+          <span>Periode</span>
+          <span id="periodAvg">-</span> s
+        </div>
+
+        <div class="stat-row">
+          <span>Amplitudo</span>
+          <span id="ampVal">-</span> cm
+        </div>
+
+      </div>
+
+      <!-- Informasi -->
+      <div class="card">
+
+        <div class="card-title">
+          Informasi Fitting
+        </div>
+
+        <p
+          style="
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-top: 8px;
+          "
+        >
+          Halaman ini mengambil data mentah yang sudah disimpan dari halaman Analysis,
+          kemudian melakukan fitting sinus untuk memperoleh nilai amplitudo, dan periode.
+        </p>
+
+        <button
+          class="theme-btn"
+          onclick="window.location.href='analysis.html'"
+          style="margin-top: 12px;"
+        >
+          Kembali ke Data Mentah
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================= GRAFIK FITTING SINUS ================= -->
+    <section class="chart-card">
+
+      <h3>Grafik Hasil Fitting Sinus x(t)</h3>
+
+      <p
+        style="
+          margin-top: -5px;
+          margin-bottom: 14px;
+          font-size: 13px;
+          color: var(--text-muted);
+        "
+      >
+        Grafik ini menampilkan kurva sinus hasil fitting berdasarkan data osilasi pegas.
+      </p>
+
+      <div class="chart-wrapper analysis-chart">
+
+        <canvas id="analysisChart"></canvas>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<!-- ================= JS ================= -->
+
+<script src="../js/ui.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="../js/fitting.js"></script>
+
+</body>
+</html>

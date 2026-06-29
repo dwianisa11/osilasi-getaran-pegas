@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   THEME VARIABLES
+   ===================================================== */
+
+/* ---------- DARK MODE ---------- */
+:root[data-theme="dark"] {
+  /* background */
+  --bg: #0b1220;
+  --sidebar-bg: #0a1020;
+
+  /* card / panel */
+  --card-grad-1: #0f1b35;
+  --card-grad-2: #0b1328;
+
+  /* text */
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+
+  /* accent */
+  --accent: #60a5fa;
+
+  /* ui */
+  --border: rgba(255, 255, 255, 0.06);
+  --hover: rgba(255, 255, 255, 0.08);
+  --active-bg: rgba(59, 130, 246, 0.15);
+}
+
+/* ---------- LIGHT MODE (SOFT WHITE) ---------- */
+:root[data-theme="light"],
+:root:not([data-theme]) {
+  /* background */
+  --bg: #f4f7fb;                 /* putih lembut */
+  --sidebar-bg: #f8faff;         /* sidebar kebiruan */
+
+  /* card / panel */
+  --card-grad-1: #f9fbff;
+  --card-grad-2: #eef3fb;
+
+  /* text */
+  --text: #1e3a8a;               /* biru tua */
+  --text-muted: #64748b;
+
+  /* accent */
+  --accent: #2563eb;
+
+  /* ui */
+  --border: rgba(30, 58, 138, 0.12);
+  --hover: rgba(37, 99, 235, 0.08);
+  --active-bg: rgba(37, 99, 235, 0.14);
+}
+
+/* =====================================================
+   GLOBAL BASE
+   ===================================================== */
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* =====================================================
+   LAYOUT
+   ===================================================== */
+
+.app {
+  display: flex;          /* wajib untuk sidebar collapse */
+  height: 100vh;
+  width: 100%;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  padding: 28px;
+  overflow-y: auto;
+}
